@@ -219,7 +219,8 @@ We are ready to create a method that will retrieve the monkey data from the inte
 
     if (response.IsSuccessStatusCode)
     {
-        monkeyList = await response.Content.ReadFromJsonAsync(MonkeyContext.Default.ListMonkey);
+        //monkeyList = await response.Content.ReadFromJsonAsync(MonkeyContext.Default.ListMonkey);
+    monkeyList = await response.Content.ReadFromJsonAsync<List<Monkey>>();
     }
     
     return monkeyList;
